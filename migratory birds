@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,maxc=INT_MIN,count=1,maxi;
+    cin>>n;
+    int ar[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>ar[i];
+    }
+    int id=ar[0];
+    const int N=2e5;
+    int idx[N];
+    for(int i=0;i<N;i++)
+    {
+        idx[i]=-1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(idx[ar[i]]==-1)
+        idx[ar[i]]=1;
+         else {
+         idx[ar[i]]++;
+         }  
+      }
+      for(int i=0;i<N;i++)
+      {
+          maxc=max(maxc,idx[i]);
+      }
+      
+      for(int j=0;j<N;j++)
+      {
+          if(idx[j]==maxc)
+          {
+              maxi=j;
+              break;
+          }
+      }
+      
+      cout<<maxi<<endl;
+    
+
+
+
+    return 0;
+
+}
